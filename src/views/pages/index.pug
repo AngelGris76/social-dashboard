@@ -1,0 +1,31 @@
+- const nets = [{net:"facebook", follows: 1987, today: 12}, {net:"twitter", follows: "1044", today: 99},{net:"instagram", follows: "11k", today: 1099}, {net:"youtube", follows: 8239, today: -144}]
+
+- const statsNumber = [{net: "facebook", item: "Pages Views", stats: 87, percentage: 3}, {net: "facebook", item: "Likes", stats: 52, percentage: -2}, {net: "instagram", item: "Likes", stats: 5462, percentage: 2257}, {net: "instagram", item: "Profile Views", stats: "52k", percentage: 1375}, {net: "twitter", item: "Retwiits", stats: 117, percentage: 303}, {net: "twitter", item: "Likes", stats: 507, percentage: 553}, {net: "youtube", item: "Likes", stats: 107, percentage: -19}, {net: "youtube", item: "Total Views", stats: 1407, percentage: -12}]
+
+include ../mixins/social-followers.pug
+include ../mixins/today-stats.pug
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet")
+    link(rel="stylesheet", href="css/normalize.css")
+    link(rel="stylesheet", href="css/styles.css")
+    script(src="js/script.js" type="module") 
+    title Social media dashboard
+  body 
+    include ../layout/header
+    main.main
+      .card-container
+        each network in nets 
+          +card(network)
+      section.today
+        h2.today__title Overview - Today
+        .stats-container
+          each net in statsNumber
+            +stats(net)

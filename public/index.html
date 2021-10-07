@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" type="module"> </script>
+    <title>Social media dashboard</title>
+  </head>
+  <body> 
+    <header class="header"> 
+      <h1 class="header__title">Social Media Dashboard </h1>
+      <p class="header__subtitle">Total Followers: 23.004</p>
+      <div class="themecontrol">
+        <label class="themecontrol__label" for="darkmodecontrol">Dark Mode</label>
+        <input class="themcontrol__checkbox" id="darkmodecontrol" type="checkbox" name="darkmodecontrol">
+      </div>
+    </header>
+    <main class="main">
+      <div class="card-container">
+        <article class="mediacard mediacard--facebook">
+          <header class="mediacard__header"> <img class="mediacard__netlogo" src="assets/images/icon-facebook.svg" alt="facebook logo"/>
+            <h2 class="mediacard__user">@nathanf</h2>
+          </header>
+          <p class="mediacard__stats">1987<span class="mediacard__stats-description"> FOLLOWERS</span></p>
+          <p class="mediacard__today-stats--positives">12 Today</p>
+        </article>
+        <article class="mediacard mediacard--twitter">
+          <header class="mediacard__header"> <img class="mediacard__netlogo" src="assets/images/icon-twitter.svg" alt="twitter logo"/>
+            <h2 class="mediacard__user">@nathanf</h2>
+          </header>
+          <p class="mediacard__stats">1044<span class="mediacard__stats-description"> FOLLOWERS</span></p>
+          <p class="mediacard__today-stats--positives">99 Today</p>
+        </article>
+        <article class="mediacard mediacard--instagram">
+          <header class="mediacard__header"> <img class="mediacard__netlogo" src="assets/images/icon-instagram.svg" alt="instagram logo"/>
+            <h2 class="mediacard__user">@realnathanf</h2>
+          </header>
+          <p class="mediacard__stats">11k<span class="mediacard__stats-description"> FOLLOWERS</span></p>
+          <p class="mediacard__today-stats--positives">1099 Today</p>
+        </article>
+        <article class="mediacard mediacard--youtube">
+          <header class="mediacard__header"> <img class="mediacard__netlogo" src="assets/images/icon-youtube.svg" alt="youtube logo"/>
+            <h2 class="mediacard__user">Nathan F.</h2>
+          </header>
+          <p class="mediacard__stats">8239<span class="mediacard__stats-description"> SUSCRIBER</span></p>
+          <p class="mediacard__today-stats--negatives">-144 Today</p>
+        </article>
+      </div>
+      <section class="today">
+        <h2 class="today__title">Overview - Today</h2>
+        <div class="stats-container">
+          <div class="net">
+            <p class="net__stats">Pages Views<span class="net__stats--number">87</span></p>
+            <div class="net__network"><img class="net__log" src="assets/images/icon-facebook.svg" alt="facebook logo"/><span class="net__percentage">3</span>
+            </div>
+          </div>
+          <div class="net">
+            <p class="net__stats">Likes<span class="net__stats--number">52</span></p>
+            <div class="net__network"><img class="net__log" src="assets/images/icon-facebook.svg" alt="facebook logo"/><span class="net__percentage--negative">-2</span>
+            </div>
+          </div>
+          <div class="net">
+            <p class="net__stats">Likes<span class="net__stats--number">5462</span></p>
+            <div class="net__network"><img class="net__log" src="assets/images/icon-instagram.svg" alt="instagram logo"/><span class="net__percentage">2257</span>
+            </div>
+          </div>
+          <div class="net">
+            <p class="net__stats">Profile Views<span class="net__stats--number">52k</span></p>
+            <div class="net__network"><img class="net__log" src="assets/images/icon-instagram.svg" alt="instagram logo"/><span class="net__percentage">1375</span>
+            </div>
+          </div>
+          <div class="net">
+            <p class="net__stats">Retwiits<span class="net__stats--number">117</span></p>
+            <div class="net__network"><img class="net__log" src="assets/images/icon-twitter.svg" alt="twitter logo"/><span class="net__percentage">303</span>
+            </div>
+          </div>
+          <div class="net">
+            <p class="net__stats">Likes<span class="net__stats--number">507</span></p>
+            <div class="net__network"><img class="net__log" src="assets/images/icon-twitter.svg" alt="twitter logo"/><span class="net__percentage">553</span>
+            </div>
+          </div>
+          <div class="net">
+            <p class="net__stats">Likes<span class="net__stats--number">107</span></p>
+            <div class="net__network"><img class="net__log" src="assets/images/icon-youtube.svg" alt="youtube logo"/><span class="net__percentage--negative">-19</span>
+            </div>
+          </div>
+          <div class="net">
+            <p class="net__stats">Total Views<span class="net__stats--number">1407</span></p>
+            <div class="net__network"><img class="net__log" src="assets/images/icon-youtube.svg" alt="youtube logo"/><span class="net__percentage--negative">-12</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
