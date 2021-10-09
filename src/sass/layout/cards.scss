@@ -1,13 +1,15 @@
 .card {
-  position: absolute;
-  top: -40px;
+  position: relative;
+  top: -54px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(220px, 440px);
   gap: 1.8rem;
+  justify-content: center;
 
-  width: 100%;
-  margin: 0;
+  width: 86%;
+  margin-inline: auto;
   padding-left: 0;
+
   list-style: none;
 
   &__link {
@@ -17,8 +19,7 @@
     align-items: center;
 
     overflow: hidden;
-    width: 86%;
-    margin-inline: auto;
+    max-width: 440px;
     padding-block: 1.85rem;
 
     text-decoration: none;
@@ -50,6 +51,12 @@
 
     &--youtube::before {
       background-color: var(--YouTube);
+    }
+
+    @media screen and (min-width: 1280px) {
+      &:hover {
+        background-color: var(--Card-hover);
+      }
     }
   }
 
@@ -115,5 +122,14 @@
         content: url("../assets/images/icon-down.svg");
       }
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, minmax(220px, 440px));
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    grid-template-columns: repeat(4, minmax(220px, 258px));
   }
 }

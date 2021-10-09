@@ -29,6 +29,8 @@
   --Very-Dark-Blue: hsl(230, 17%, 14%); // Background
   --Very-Dark-Blue1: hsl(232, 19%, 15%); // Top Background pattern
   --Dark-Desaturated-Blue: hsl(228, 28%, 20%); // Card Background
+  --Dark-Desaturated-Blue-Hover: hsl(228, 28%, 25%); // Card Background Hover
+
   --Desaturated-Blue: hsl(228, 34%, 66%); // Text
   --White: hsl(0, 0%, 100%); // Text
 
@@ -36,6 +38,7 @@
   --White: hsl(0, 0%, 100%); // Background
   --Very-Pale-Blue: hsl(225, 100%, 98%); // Top Background pattern
   --Light-Grayish-Blue: hsl(227, 47%, 96%); // Card Background
+  --Light-Grayish-Blue-Hover: hsl(227, 47%, 93%); // Card Background Hover
   --Dark-Grayish-Blue: hsl(228, 12%, 44%); // Text
   --Very-Dark-Blue: hsl(230, 17%, 14%); // Text
 
@@ -46,6 +49,7 @@
   --Light-Text: var(--Dark-Grayish-Blue);
   --Check-Background: var(--Toggle-Light);
   --Section-Title: var(--Dark-Grayish-Blue);
+  --Card-hover: var(--Light-Grayish-Blue-Hover);
 }
 
 .dark-theme {
@@ -56,6 +60,7 @@
   --Light-Text: var(--Desaturated-Blue);
   --Check-Background: var(--Toggle-Dark);
   --Section-Title: var(--White);
+  --Card-hover: var(--Dark-Desaturated-Blue-Hover);
 }
 
 .body {

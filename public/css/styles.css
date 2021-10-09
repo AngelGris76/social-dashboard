@@ -21,11 +21,13 @@
   --Very-Dark-Blue: hsl(230, 17%, 14%);
   --Very-Dark-Blue1: hsl(232, 19%, 15%);
   --Dark-Desaturated-Blue: hsl(228, 28%, 20%);
+  --Dark-Desaturated-Blue-Hover: hsl(228, 28%, 25%);
   --Desaturated-Blue: hsl(228, 34%, 66%);
   --White: hsl(0, 0%, 100%);
   --White: hsl(0, 0%, 100%);
   --Very-Pale-Blue: hsl(225, 100%, 98%);
   --Light-Grayish-Blue: hsl(227, 47%, 96%);
+  --Light-Grayish-Blue-Hover: hsl(227, 47%, 93%);
   --Dark-Grayish-Blue: hsl(228, 12%, 44%);
   --Very-Dark-Blue: hsl(230, 17%, 14%);
   --Background: var(--White);
@@ -35,6 +37,7 @@
   --Light-Text: var(--Dark-Grayish-Blue);
   --Check-Background: var(--Toggle-Light);
   --Section-Title: var(--Dark-Grayish-Blue);
+  --Card-hover: var(--Light-Grayish-Blue-Hover);
 }
 
 .dark-theme {
@@ -45,6 +48,7 @@
   --Light-Text: var(--Desaturated-Blue);
   --Check-Background: var(--Toggle-Dark);
   --Section-Title: var(--White);
+  --Card-hover: var(--Dark-Desaturated-Blue-Hover);
 }
 
 .body {
@@ -73,9 +77,20 @@
 }
 .header__title-container {
   width: 86%;
+  max-width: 440px;
   margin-inline: auto;
   padding-bottom: 0.8em;
   border-bottom: 1px solid var(--Light-Text);
+}
+@media screen and (min-width: 768px) {
+  .header__title-container {
+    max-width: 912px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__title-container {
+    max-width: 1118px;
+  }
 }
 .header__title {
   margin-top: 38px;
@@ -94,6 +109,7 @@
   justify-content: space-between;
   align-items: center;
   width: 86%;
+  max-width: 440px;
   margin-inline: auto;
   padding-top: 1.4em;
   font-weight: 700;
@@ -120,15 +136,32 @@
 .themecontrol__checkbox:checked::after {
   transform: translateX(22px);
 }
+@media screen and (min-width: 1280px) {
+  .themecontrol__checkbox:hover {
+    background: var(--Toggle-Dark);
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 768px) {
+  .themecontrol {
+    max-width: 912px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .themecontrol {
+    max-width: 1118px;
+  }
+}
 
 .card {
-  position: absolute;
-  top: -40px;
+  position: relative;
+  top: -54px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(220px, 440px);
   gap: 1.8rem;
-  width: 100%;
-  margin: 0;
+  justify-content: center;
+  width: 86%;
+  margin-inline: auto;
   padding-left: 0;
   list-style: none;
 }
@@ -138,8 +171,7 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  width: 86%;
-  margin-inline: auto;
+  max-width: 440px;
   padding-block: 1.85rem;
   text-decoration: none;
   border-radius: 8px;
@@ -164,6 +196,11 @@
 }
 .card__link--youtube::before {
   background-color: var(--YouTube);
+}
+@media screen and (min-width: 1280px) {
+  .card__link:hover {
+    background-color: var(--Card-hover);
+  }
 }
 .card__header {
   display: flex;
@@ -213,22 +250,45 @@
 .card__today-stats--negative::before {
   content: url("../assets/images/icon-down.svg");
 }
+@media screen and (min-width: 768px) {
+  .card {
+    grid-template-columns: repeat(2, minmax(220px, 440px));
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .card {
+    grid-template-columns: repeat(4, minmax(220px, 258px));
+  }
+}
 
 .today {
   position: relative;
-  top: 942px;
+  top: -22px;
   width: 86%;
   margin-inline: auto;
 }
 .today__title {
-  margin: 0;
+  margin: 0 auto;
+  max-width: 440px;
   font-size: 1.75rem;
   color: var(--Section-Title);
+}
+@media screen and (min-width: 768px) {
+  .today__title {
+    max-width: 912px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .today__title {
+    max-width: 1118px;
+  }
 }
 
 .stat {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(220px, 440px);
+  justify-content: center;
   gap: 1.15rem;
   margin: 0;
   padding-left: 0;
@@ -241,9 +301,16 @@
   align-items: stretch;
   padding: 2rem 2.5rem 1.8rem;
   height: 125px;
+  max-width: 440px;
+  margin-inline: auto;
   text-decoration: none;
   background-color: var(--Card-Background);
   border-radius: 8px;
+}
+@media screen and (min-width: 1280px) {
+  .stat__link:hover {
+    background-color: var(--Card-hover);
+  }
 }
 .stat__stats-container, .stat__network {
   display: flex;
@@ -292,4 +359,15 @@
 }
 .stat__percentage--negative::before {
   content: url("../assets/images/icon-down.svg");
+}
+@media screen and (min-width: 768px) {
+  .stat {
+    grid-template-columns: repeat(2, minmax(220px, 440px));
+    gap: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .stat {
+    grid-template-columns: repeat(4, minmax(220px, 258px));
+  }
 }

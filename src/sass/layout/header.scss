@@ -14,10 +14,19 @@
 
   &__title-container {
     width: 86%;
+    max-width: 440px;
     margin-inline: auto;
     padding-bottom: 0.8em;
 
     border-bottom: 1px solid var(--Light-Text);
+
+    @media screen and (min-width: 768px) {
+      max-width: 912px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      max-width: 1118px;
+    }
   }
 
   &__title {
@@ -42,6 +51,7 @@
   justify-content: space-between;
   align-items: center;
   width: 86%;
+  max-width: 440px;
   margin-inline: auto;
   padding-top: 1.4em;
 
@@ -73,5 +83,20 @@
     &:checked::after {
       transform: translateX(22px);
     }
+
+    @media screen and (min-width: 1280px) {
+      &:hover {
+        background: var(--Toggle-Dark);
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    max-width: 912px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1118px;
   }
 }
