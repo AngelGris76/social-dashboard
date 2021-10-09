@@ -1,21 +1,23 @@
 mixin card(network)
-  article(class=`mediacard mediacard--${network.net}`)
-    - var name = "@nathanf"
-    header.mediacard__header 
-      img.mediacard__netlogo(src=`assets/images/icon-${network.net}.svg`, alt=`${network.net} logo`)
-      if network.net == "instagram" 
-        - name = "@realnathanf"
-      else
-        if network.net == "youtube" 
-         - name = "Nathan F."
-      h2.mediacard__user= name
-    p.mediacard__stats= network.follows
-      span.mediacard__stats-description 
-        if network.net == "youtube"
-          = `SUSCRIBER`
+  li.card__item 
+    a(href=`http://www.${network.net}.com` class=`card__link card__link--${network.net}`)
+      - var name = "@nathanf"
+      .card__header 
+        img.card__netlogo(src=`assets/images/icon-${network.net}.svg`, alt=`${network.net} logo`)
+        if network.net == "instagram" 
+          - name = "@realnathanf"
         else
-          = `FOLLOWERS`
-    if network.today >= 0
-      p.mediacard__today-stats--positives= `${network.today} Today`
-    else 
-      p.mediacard__today-stats--negatives= `${network.today} Today`
+          if network.net == "youtube" 
+           - name = "Nathan F."
+        h2.card__user= name
+      p.card__stats= network.follows
+        span.card__stats-description 
+          if network.net == "youtube"
+            = `SUSCRIBERS`
+          else
+            = `FOLLOWERS`
+      if network.today >= 0
+        - var stats = "positive"
+      else 
+        - stats = "negative"
+      p(class=`card__today-stats card__today-stats--${stats}`)= `${Math.abs(network.today)} Today`

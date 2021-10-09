@@ -1,10 +1,12 @@
 mixin stats(net)
-  .net
-    p.net__stats= net.item
-      span.net__stats--number= net.stats
-    .net__network
-      img.net__log(src=`assets/images/icon-${net.net}.svg`, alt=`${net.net} logo`)
-      if net.percentage < 0
-        span.net__percentage--negative= net.percentage
-      else 
-        span.net__percentage= net.percentage
+  li.stat__item
+    a(href=`http://www.${net.net}.com` class="stat__link")
+      .stat__stats-container
+        p.stat__stats= net.item
+        p.stat__stats--number= net.stats
+      .stat__network
+        img.stat__logo(src=`assets/images/icon-${net.net}.svg`, alt=`${net.net} logo`)
+        - var extraClass = "stat__percentage--positive"
+        if net.percentage < 0
+          - extraClass = "stat__percentage--negative"
+        span(class=`stat__percentage ${extraClass}`)= `${Math.abs(net.percentage)}%`

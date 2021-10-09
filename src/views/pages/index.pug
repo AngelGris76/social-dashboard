@@ -18,14 +18,14 @@ html(lang="en")
     link(rel="stylesheet", href="css/styles.css")
     script(src="js/script.js" type="module") 
     title Social media dashboard
-  body 
+  body.body
     include ../layout/header
     main.main
-      .card-container
+      ul.card
         each network in nets 
           +card(network)
       section.today
         h2.today__title Overview - Today
-        .stats-container
+        ul.stat
           each net in statsNumber
             +stats(net)
