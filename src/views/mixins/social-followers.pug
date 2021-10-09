@@ -1,6 +1,6 @@
 mixin card(network)
   li.card__item 
-    a(href=`http://www.${network.net}.com` class=`card__link card__link--${network.net}`)
+    a(href=`http://www.${network.net}.com` class=`card__link card__link--${network.net}` aria-label=`Nathan F. ${network.net}`)
       - var name = "@nathanf"
       .card__header 
         img.card__netlogo(src=`assets/images/icon-${network.net}.svg`, alt=`${network.net} logo`)

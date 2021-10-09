@@ -1,6 +1,6 @@
 mixin stats(net)
   li.stat__item
-    a(href=`http://www.${net.net}.com` class="stat__link")
+    a(href=`http://www.${net.net}.com` class="stat__link" aria-label= `Nathan F ${net.net}`)
       .stat__stats-container
         p.stat__stats= net.item
         p.stat__stats--number= net.stats
