@@ -12,6 +12,13 @@
   border-bottom-right-radius: 18px;
   background-color: var(--Top-Background-Pattern);
 
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
   &__title-container {
     width: 86%;
     max-width: 440px;
@@ -21,11 +28,15 @@
     border-bottom: 1px solid var(--Light-Text);
 
     @media screen and (min-width: 768px) {
-      max-width: 912px;
+      width: 42%;
+      margin-inline: 0;
+
+      border: none;
     }
 
     @media screen and (min-width: 1280px) {
-      max-width: 1118px;
+      width: 50%;
+      max-width: 540px;
     }
   }
 
@@ -59,6 +70,19 @@
 
   color: var(--Light-Text);
 
+  @media screen and (min-width: 768px) {
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 40%;
+    margin-inline: 0;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 50%;
+    max-width: 540px;
+  }
+
   &__checkbox {
     position: relative;
     width: 48px;
@@ -90,13 +114,5 @@
         cursor: pointer;
       }
     }
-  }
-
-  @media screen and (min-width: 768px) {
-    max-width: 912px;
-  }
-
-  @media screen and (min-width: 1280px) {
-    max-width: 1118px;
   }
 }

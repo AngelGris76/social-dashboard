@@ -75,6 +75,14 @@
   border-bottom-right-radius: 18px;
   background-color: var(--Top-Background-Pattern);
 }
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}
 .header__title-container {
   width: 86%;
   max-width: 440px;
@@ -84,12 +92,15 @@
 }
 @media screen and (min-width: 768px) {
   .header__title-container {
-    max-width: 912px;
+    width: 42%;
+    margin-inline: 0;
+    border: none;
   }
 }
 @media screen and (min-width: 1280px) {
   .header__title-container {
-    max-width: 1118px;
+    width: 50%;
+    max-width: 540px;
   }
 }
 .header__title {
@@ -114,6 +125,21 @@
   padding-top: 1.4em;
   font-weight: 700;
   color: var(--Light-Text);
+}
+@media screen and (min-width: 768px) {
+  .themecontrol {
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 40%;
+    margin-inline: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .themecontrol {
+    width: 50%;
+    max-width: 540px;
+  }
 }
 .themecontrol__checkbox {
   position: relative;
@@ -140,16 +166,6 @@
   .themecontrol__checkbox:hover {
     background: var(--Toggle-Dark);
     cursor: pointer;
-  }
-}
-@media screen and (min-width: 768px) {
-  .themecontrol {
-    max-width: 912px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .themecontrol {
-    max-width: 1118px;
   }
 }
 
