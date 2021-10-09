@@ -1,0 +1,73 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 85%;
+
+  //Primary
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+
+  //Dark Theme
+  --Toggle-Dark: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+
+  //Light Theme
+  --Toggle-Light: hsl(230, 22%, 74%);
+
+  //Dark Theme
+  --Very-Dark-Blue: hsl(230, 17%, 14%); // Background
+  --Very-Dark-Blue1: hsl(232, 19%, 15%); // Top Background pattern
+  --Dark-Desaturated-Blue: hsl(228, 28%, 20%); // Card Background
+  --Desaturated-Blue: hsl(228, 34%, 66%); // Text
+  --White: hsl(0, 0%, 100%); // Text
+
+  //Light Theme
+  --White: hsl(0, 0%, 100%); // Background
+  --Very-Pale-Blue: hsl(225, 100%, 98%); // Top Background pattern
+  --Light-Grayish-Blue: hsl(227, 47%, 96%); // Card Background
+  --Dark-Grayish-Blue: hsl(228, 12%, 44%); // Text
+  --Very-Dark-Blue: hsl(230, 17%, 14%); // Text
+
+  --Background: var(--White);
+  --Top-Background-Pattern: var(--Very-Pale-Blue);
+  --Card-Background: var(--Light-Grayish-Blue);
+  --Bold-Text: var(--Very-Dark-Blue);
+  --Light-Text: var(--Dark-Grayish-Blue);
+  --Check-Background: var(--Toggle-Light);
+  --Section-Title: var(--Dark-Grayish-Blue);
+}
+
+.dark-theme {
+  --Background: var(--Very-Dark-Blue);
+  --Top-Background-Pattern: var(--Very-Dark-Blue1);
+  --Card-Background: var(--Dark-Desaturated-Blue);
+  --Bold-Text: var(--White);
+  --Light-Text: var(--Desaturated-Blue);
+  --Check-Background: var(--Toggle-Dark);
+  --Section-Title: var(--White);
+}
+
+.body {
+  position: relative;
+  margin: 0;
+
+  font-family: "Inter", sans-serif;
+
+  background-color: var(--Background);
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+}

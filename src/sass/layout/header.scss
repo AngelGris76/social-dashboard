@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 0.1px;
+  height: 232px;
+
+  font-size: 1rem;
+
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-color: var(--Top-Background-Pattern);
+
+  &__title-container {
+    width: 86%;
+    margin-inline: auto;
+    padding-bottom: 0.8em;
+
+    border-bottom: 1px solid var(--Light-Text);
+  }
+
+  &__title {
+    margin-top: 38px;
+    margin-bottom: 0.3em;
+
+    font-size: clamp(1.7rem, 6vw, 2rem);
+
+    color: var(--Bold-Text);
+  }
+
+  &__subtitle {
+    margin-top: 0;
+
+    font-weight: 700;
+    color: var(--Light-Text);
+  }
+}
+
+.themecontrol {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 86%;
+  margin-inline: auto;
+  padding-top: 1.4em;
+
+  font-weight: 700;
+
+  color: var(--Light-Text);
+
+  &__checkbox {
+    position: relative;
+    width: 48px;
+    height: 24px;
+
+    background: var(--Check-Background);
+    appearance: none;
+    border-radius: 12px;
+
+    &::after {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      top: 3px;
+      left: 4px;
+
+      content: "";
+      background-color: var(--Top-Background-Pattern);
+      border-radius: 50%;
+    }
+
+    &:checked::after {
+      transform: translateX(22px);
+    }
+  }
+}

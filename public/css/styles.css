@@ -1,0 +1,295 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 85%;
+  --Lime-Green: hsl(163, 72%, 41%);
+  --Bright-Red: hsl(356, 69%, 56%);
+  --Facebook: hsl(208, 92%, 53%);
+  --Twitter: hsl(203, 89%, 53%);
+  --Instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --YouTube: hsl(348, 97%, 39%);
+  --Toggle-Dark: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+  --Toggle-Light: hsl(230, 22%, 74%);
+  --Very-Dark-Blue: hsl(230, 17%, 14%);
+  --Very-Dark-Blue1: hsl(232, 19%, 15%);
+  --Dark-Desaturated-Blue: hsl(228, 28%, 20%);
+  --Desaturated-Blue: hsl(228, 34%, 66%);
+  --White: hsl(0, 0%, 100%);
+  --White: hsl(0, 0%, 100%);
+  --Very-Pale-Blue: hsl(225, 100%, 98%);
+  --Light-Grayish-Blue: hsl(227, 47%, 96%);
+  --Dark-Grayish-Blue: hsl(228, 12%, 44%);
+  --Very-Dark-Blue: hsl(230, 17%, 14%);
+  --Background: var(--White);
+  --Top-Background-Pattern: var(--Very-Pale-Blue);
+  --Card-Background: var(--Light-Grayish-Blue);
+  --Bold-Text: var(--Very-Dark-Blue);
+  --Light-Text: var(--Dark-Grayish-Blue);
+  --Check-Background: var(--Toggle-Light);
+  --Section-Title: var(--Dark-Grayish-Blue);
+}
+
+.dark-theme {
+  --Background: var(--Very-Dark-Blue);
+  --Top-Background-Pattern: var(--Very-Dark-Blue1);
+  --Card-Background: var(--Dark-Desaturated-Blue);
+  --Bold-Text: var(--White);
+  --Light-Text: var(--Desaturated-Blue);
+  --Check-Background: var(--Toggle-Dark);
+  --Section-Title: var(--White);
+}
+
+.body {
+  position: relative;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background-color: var(--Background);
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 0.1px;
+  height: 232px;
+  font-size: 1rem;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background-color: var(--Top-Background-Pattern);
+}
+.header__title-container {
+  width: 86%;
+  margin-inline: auto;
+  padding-bottom: 0.8em;
+  border-bottom: 1px solid var(--Light-Text);
+}
+.header__title {
+  margin-top: 38px;
+  margin-bottom: 0.3em;
+  font-size: clamp(1.7rem, 6vw, 2rem);
+  color: var(--Bold-Text);
+}
+.header__subtitle {
+  margin-top: 0;
+  font-weight: 700;
+  color: var(--Light-Text);
+}
+
+.themecontrol {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 86%;
+  margin-inline: auto;
+  padding-top: 1.4em;
+  font-weight: 700;
+  color: var(--Light-Text);
+}
+.themecontrol__checkbox {
+  position: relative;
+  width: 48px;
+  height: 24px;
+  background: var(--Check-Background);
+  appearance: none;
+  border-radius: 12px;
+}
+.themecontrol__checkbox::after {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+  left: 4px;
+  content: "";
+  background-color: var(--Top-Background-Pattern);
+  border-radius: 50%;
+}
+.themecontrol__checkbox:checked::after {
+  transform: translateX(22px);
+}
+
+.card {
+  position: absolute;
+  top: -40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+  width: 100%;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.card__link {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  width: 86%;
+  margin-inline: auto;
+  padding-block: 1.85rem;
+  text-decoration: none;
+  border-radius: 8px;
+  background-color: var(--Card-Background);
+}
+.card__link::before {
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 0;
+  left: 0;
+  content: "";
+}
+.card__link--facebook::before {
+  background-color: var(--Facebook);
+}
+.card__link--twitter::before {
+  background-color: var(--Twitter);
+}
+.card__link--instagram::before {
+  background: var(--Instagram);
+}
+.card__link--youtube::before {
+  background-color: var(--YouTube);
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+.card__user {
+  font-size: 0.85rem;
+  color: var(--Light-Text);
+}
+.card__stats {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--Bold-Text);
+}
+.card__stats-description {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+  color: var(--Light-Text);
+}
+.card__today-stats {
+  position: relative;
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.card__today-stats::before {
+  position: absolute;
+  top: -2px;
+  left: -12px;
+}
+.card__today-stats--positive {
+  color: var(--Lime-Green);
+}
+.card__today-stats--positive::before {
+  content: url("../assets/images/icon-up.svg");
+}
+.card__today-stats--negative {
+  color: var(--Bright-Red);
+}
+.card__today-stats--negative::before {
+  content: url("../assets/images/icon-down.svg");
+}
+
+.today {
+  position: relative;
+  top: 942px;
+  width: 86%;
+  margin-inline: auto;
+}
+.today__title {
+  margin: 0;
+  font-size: 1.75rem;
+  color: var(--Section-Title);
+}
+
+.stat {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.15rem;
+  margin: 0;
+  padding-left: 0;
+  padding-block: 2rem;
+  list-style: none;
+}
+.stat__link {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 2rem 2.5rem 1.8rem;
+  height: 125px;
+  text-decoration: none;
+  background-color: var(--Card-Background);
+  border-radius: 8px;
+}
+.stat__stats-container, .stat__network {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.stat__stats-container {
+  align-items: flex-start;
+}
+.stat__network {
+  align-items: flex-end;
+}
+.stat__stats {
+  margin-top: 0.15rem;
+  margin-inline: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--Light-Text);
+}
+.stat__stats--number {
+  position: relative;
+  top: 5px;
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--Bold-Text);
+}
+.stat__percentage {
+  position: relative;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.stat__percentage::before {
+  position: absolute;
+  top: -2px;
+  left: -10px;
+}
+.stat__percentage--positive {
+  color: var(--Lime-Green);
+}
+.stat__percentage--positive::before {
+  content: url("../assets/images/icon-up.svg");
+}
+.stat__percentage--negative {
+  color: var(--Bright-Red);
+}
+.stat__percentage--negative::before {
+  content: url("../assets/images/icon-down.svg");
+}
